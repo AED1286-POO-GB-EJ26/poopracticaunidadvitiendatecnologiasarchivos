@@ -1,86 +1,57 @@
-# Proyecto - Java con Pruebas para Autograding
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/i3uWaE8A)
+[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=24011340)
+# Unidad V - Practica: Tienda Electronica, Interfaces Excepciones, Genericidad y Persistencia
 
-Plantilla básica para proyecto de Java con Autograding
+En esta practica se integran los fundamentos de Programacion Orientada a Objetos para modelar y resolver el caso de una tienda electronica, aplicando encapsulamiento, herencia, polimorfismo, clases abstractas, interfaces, arreglos, genericidad, manejo de excepciones y persistencia
 
-## Diagrama de clases
-[Editor en línea](https://mermaid.live/)
-```mermaid
----
-title: Clase
----
-classDiagram
-      class Clase
-      Clase: -x
-      Clase: -y
-      Clase: +op1()
-      Clase: +op2()
-      Clase: +op3()
-      Clase: +op4()
-```
-[Referencia-Mermaid](https://mermaid.js.org/syntax/classDiagram.html)
-
-## Diagrama de clases UML con draw.io
-El repositorio está configurado para crear Diagramas de clases UML con ```draw.io```. Para usarlo simplemente agrega un archivo con extensión ```.drawio.png```, das doble clic sobre el mismo y se activará el editor ```draw.io``` incrustado en ```VSCode``` para edición. Asegúrate de agregar las formas UML en el menú de formas del lado izquierdo (opción ```+Más formas```).
 
 ## Uso del proyecto con make
 
-### Default - Compilar+Probar+Ejecutar
-```
+### Default - Compilar + Probar + Ejecutar
+
+```bash
 make
 ```
+
 ### Compilar
-```
+
+```bash
 make compile
 ```
+
 ### Probar todo
-```
+
+```bash
 make test
 ```
-### Ejecutar App
-```
+
+### Ejecutar app
+
+```bash
 make run
 ```
+
 ### Limpiar binarios
-```
+
+```bash
 make clean
 ```
-## Comandos Git-Cambios y envío a Autograding
 
-### Por cada cambio importante que haga, actualice su historia usando los comandos:
-```
-git add .
-git commit -m "Descripción del cambio"
-```
-### Envíe sus actualizaciones a GitHub para Autograding con el comando:
-```
-git push origin main
-```
-## Comandos individuales
-### Compilar
+## Compilacion manual
 
-```
+```bash
 find ./ -type f -name "*.java" > compfiles.txt
-javac -d build -cp lib/junit-platform-console-standalone-1.5.2.jar @compfiles.txt
-```
-Ejecutar ambos comandos en 1 sólo paso:
-
-```
-find ./ -type f -name "*.java" > compfiles.txt ; javac -d build -cp lib/junit-platform-console-standalone-1.5.2.jar @compfiles.txt
+javac -encoding utf-8 -d build -cp lib/junit-platform-console-standalone-1.5.2.jar @compfiles.txt
 ```
 
+## Ejecucion manual de pruebas
 
-### Ejecutar Todas la pruebas locales de 1 Test Case
+```bash
+java -jar lib/junit-platform-console-standalone-1.5.2.jar --class-path build --scan-class-path
+```
 
-```
-java -jar lib/junit-platform-console-standalone-1.5.2.jar -class-path build --select-class miTest.AppTest
-```
-### Ejecutar 1 prueba local de 1 Test Case
+## Ejecucion manual de la aplicacion
 
-```
-java -jar lib/junit-platform-console-standalone-1.5.2.jar -class-path build --select-method miTest.AppTest#appHasAGreeting
-```
-### Ejecutar App
-```
+```bash
 java -cp build miPrincipal.Principal
 ```
-Los comandos anteriores están considerados para un ambiente Linux. [Referencia.](https://www.baeldung.com/junit-run-from-command-line)
